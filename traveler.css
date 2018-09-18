@@ -1,0 +1,25 @@
+h1 {
+  color: #254E58;
+  background-color: #88BDBC;
+
+}
+.navbar {
+  color: #254E58;
+  background-color: #6E6658;
+  margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+font-weight: 600;
+font-size: 15px;
+font-family: "Open Sans Condensed";
+letter-spacing: 2px;
+padding: 8px;
+
+}
+
+li {
+  display: inline;
+  padding: 12px;
+}
