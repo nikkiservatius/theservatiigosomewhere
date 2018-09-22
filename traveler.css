@@ -1,25 +1,79 @@
 h1 {
   color: #254E58;
   background-color: #88BDBC;
+  line-height: 300px;
+  padding-left: 10%;
+  font-size: 60px;
+  margin: 0;
+  padding: 0;
+  boarder: 0;
 
 }
+
+.logo{
+float: left;
+margin: 0;
+padding-right: 30px;
+boarder: 0;
+padding-bottom:0;
+
+}
+
+.headingtitle{
+  text-lign: center;
+  margin: 0;
+  padding: 0;
+  boarder: 0;
+}
+
 .navbar {
-  color: #254E58;
-  background-color: #6E6658;
-  margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    padding-inline-start: 40px;
+clear: left;
+color: #254E58;
+background-color: #6E6658;
 font-weight: 600;
 font-size: 15px;
 font-family: "Open Sans Condensed";
-letter-spacing: 2px;
-padding: 8px;
+letter-spacing: 5px;
+margin: 0;
+padding: 0;
+boarder: 0;
 
 }
 
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    boarder: 0;
+    overflow: hidden;
+    display: block;
+}
+
 li {
-  display: inline;
-  padding: 12px;
+    float: left;
+    margin-right: 60px;
+    font-size: 20px;
+    font-family: "Open Sans Condensed";
+
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: left;
+    padding: 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #88BDBC;
+}
+#countdown{
+  color: white;
+  background-color: #112D32;
+  font-weight: 600;
+  font-size: 30px;
+  font-family: "Open Sans Condensed";
+  letter-spacing: 5px;
+  text-align: center;
 }
