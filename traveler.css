@@ -11,11 +11,24 @@ h1 {
 }
 
 .logo{
+height: 300px;
+width: 300px;
 float: left;
 margin: 0;
 padding-right: 30px;
 boarder: 0;
 padding-bottom:0;
+
+}
+
+.bodytext{
+  color: #254E58;
+  background-color: #88BDBC;
+  line-height: 25px;
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+  boarder: 0;
 
 }
 
@@ -66,7 +79,7 @@ li a {
 }
 
 li a:hover {
-    background-color: #88BDBC;
+    background-color: #254E58;
 }
 #countdown{
   color: white;
@@ -76,4 +89,33 @@ li a:hover {
   font-family: "Open Sans Condensed";
   letter-spacing: 5px;
   text-align: center;
+  margin: 0;
+  padding: 0;
+  boarder: 0;
+}
+
+.prettymugs{
+  padding: 30px;
+  display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    height:450px;
+    width: 600px;
+
+}
+
+#footer{
+  clear: left;
+  color: #254E58;
+  font-weight: 600;
+  font-size: 15px;
+  font-family: "Open Sans Condensed";
+  letter-spacing: 5px;
+  margin: 0;
+  padding: 0;
+  boarder: 0;
+
+
+
 }
