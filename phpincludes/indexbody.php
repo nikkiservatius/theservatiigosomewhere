@@ -1,5 +1,6 @@
 <body>
-    <div class = "login">
+
+    <div class = "bodytext">
 
       Sign up to participate in voting!
 
