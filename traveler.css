@@ -21,6 +21,13 @@ padding-bottom:0;
 
 }
 
+.message {
+  background-color:white;
+  color: red;
+  font-family:"Open Sans Condensed";
+  fond-size: 20px;
+}
+
 .bodytext{
   color: #254E58;
   background-color: #88BDBC;
