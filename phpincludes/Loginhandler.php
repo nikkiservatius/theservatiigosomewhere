@@ -1,7 +1,8 @@
 <?php
+session_start();
 header("Location: ../index.php");
 
-session_start();
+
 $name = $_POST['name'];
 $password = $_POST['password'];
 $_SESSION['presets']['name'] = $name;

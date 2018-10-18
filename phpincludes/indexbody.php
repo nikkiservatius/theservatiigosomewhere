@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <body>
 
     <div class = "bodytext">
