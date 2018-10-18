@@ -15,7 +15,7 @@ if (empty($name)) {
   $_SESSION['messages'][] = "Name is required.";
   $bad = true;
 }
-if (empty($comment)) {
+if (empty($password)) {
   $_SESSION['messages'][] = "Password is required.";
   $bad = true;
 }

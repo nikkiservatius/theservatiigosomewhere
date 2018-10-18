@@ -7,8 +7,10 @@
       Sign up to participate in voting!
 
       <?php if (isset($_SESSION['messages'])) {
-  foreach ($_SESSION['messages'] as $message) {?>
+          foreach ($_SESSION['messages'] as $message) {?>
       <div class="message">
+
+
       <?php echo $message; ?></div>
 <?php  }
  unset($_SESSION['messages']);
