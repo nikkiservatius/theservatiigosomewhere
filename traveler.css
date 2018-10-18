@@ -22,10 +22,10 @@ padding-bottom:0;
 }
 
 .message {
-  background-color:white;
+  background-color: white;
   color: red;
   font-family:"Open Sans Condensed";
-  fond-size: 20px;
+  font-size: 20px;
 }
 
 .bodytext{
