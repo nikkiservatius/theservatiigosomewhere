@@ -8,26 +8,23 @@
 
       <?php if (isset($_SESSION['messages'])) {
           foreach ($_SESSION['messages'] as $message) {?>
+            <div id = "error">
+              <?php echo $message; ?>
+            </div>
 
-      <div class = "message">
+            <?php  }
+            unset($_SESSION['messages']);
+            ?>
+          <?php } ?>
 
-
-      <?php echo $message; ?></div>
-<?php  }
- unset($_SESSION['messages']);
-?>
-
-<?php } ?>
-
-      <form action = "phpincludes/Loginhandler.php" method = "POST">
+      <form method = POST action = "phpincludes/Loginhandler.php">
           <h5>
             Username:
-            <input type= "text" placeholder = "username here" name = "username" >
-          </h5>
+            <input type= "text" placeholder = "username here" name = "name"><br>
           Password:
-          <input type= "text"><br>
-          <input type= "submit" value = "CreateAccount">
-          <input type= "submit" value = "Login">
+          <input type= "password" placeholder = "password here" name = "password" ><br>
+          <input type= "submit" value = "CreateAccount" name "CreateButton">
+          <input type= "submit" value = "Login" name="loginButton">
       </form>
     </div>
   </body>

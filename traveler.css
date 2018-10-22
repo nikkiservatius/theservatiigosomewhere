@@ -16,13 +16,12 @@ width: 300px;
 float: left;
 margin: 0;
 padding-right: 30px;
-boarder: 0;
+border: 0;
 padding-bottom:0;
 
 }
 
-.message {
-  background-color: white;
+#error{
   color: red;
   font-family:"Open Sans Condensed";
   font-size: 20px;
@@ -35,12 +34,12 @@ padding-bottom:0;
   font-size: 20px;
   margin: 0;
   padding: 0;
-  boarder: 0;
+  border: 0;
 
 }
 
 .headingtitle{
-  text-lign: center;
+  text-align: center;
   margin: 0;
   padding: 0;
   boarder: 0;

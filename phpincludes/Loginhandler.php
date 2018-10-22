@@ -8,14 +8,14 @@ $password = $_POST['password'];
 $_SESSION['presets']['name'] = $name;
 
 
-$loginerrormessages = array();
+$messages = array();
 
 $bad = false;
-if (empty($name)) {
+if (strlen($name) == 0) {
   $_SESSION['messages'][] = "Name is required.";
   $bad = true;
 }
-if (empty($password)) {
+if (strlen($password) == 0) {
   $_SESSION['messages'][] = "Password is required.";
   $bad = true;
 }
