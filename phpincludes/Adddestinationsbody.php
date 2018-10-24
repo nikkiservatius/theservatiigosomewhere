@@ -1,3 +1,5 @@
+<?php $thisPage = "Adddestinations": ?>
+
 <div class = "bodytext">
   <formmethod = POST action = "phpincludes/Adddestinationshandler.php">
   City:<br>

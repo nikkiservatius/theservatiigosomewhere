@@ -1,3 +1,5 @@
+<?php $thisPage = "Vote"; ?>
+
 <div class = "bodytext">
   <form>
   <input type="radio" name="destination selection" value="Rio De Janeiro" checked> Rio De Janeiro<br>

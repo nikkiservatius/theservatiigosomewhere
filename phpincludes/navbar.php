@@ -1,9 +1,14 @@
 <div class = "navbar">
   <ul>
-    <li><a href="Home.php">Home</a></li>
-    <li><a href="Meettheservatii.php">Meet The Servatii</a></li>
-    <li><a href="Destinations.php">Destinations</a></li>
-    <li><a href="Adddestinations.php">Add Destination</a></li>
-    <li><a href="Vote.php">VOTE</a></li>
+    <li> <?php if ($thisPage == "Home") echo " id=\"currentpage\""; ?>
+      <a href="Home.php">Home</a></li>
+    <li> <?php if ($thisPage == "Meettheservatii") echo " id=\"currentpage\""; ?>
+      <a href="Meettheservatii.php">Meet The Servatii</a></li>
+    <li> <?php if ($thisPage == "Destinations") echo " id=\"currentpage\""; ?>
+      <a href="Destinations.php">Destinations</a></li>
+    <li> <?php if ($thisPage == "Adddestinations") echo " id=\"currentpage\""; ?>
+      <a href="Adddestinations.php">Add Destination</a></li>
+    <li> <?php if ($thisPage == "Vote") echo " id=\"currentpage\""; ?>
+      <a href="Vote.php">VOTE</a></li>
   </ul>
 </div>

@@ -1,3 +1,5 @@
+<?php $thisPage = "Destinations"; ?>
+
 <div class = "bodytext">
 A list of destinations will be here - this data is pulled from a table of user input.
 
