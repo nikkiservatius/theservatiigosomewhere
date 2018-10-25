@@ -24,7 +24,7 @@ public function saveLogin ($name, $password) {
     $q->execute();
   }
 
-
+}
 
 
 
