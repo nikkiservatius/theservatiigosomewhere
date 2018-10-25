@@ -24,16 +24,16 @@ if ($bad) {
   $_SESSION['validated'] = 'bad';
   exit;
 
-  echo "here firstß";
+
 }
 // Got here, means everything validated, and the comment will post.
 unset($_SESSION['presets']);
-require_once 'Dao.php';
+require_once('Dao.php');
 $dao = new Dao();
-//if(isset($_POST['CreateButton'])) {
+if(isset($_POST['CreateButton'])) {
   echo "here";
   $dao->saveLogin($name, $password);
-//}
+}
 header('Location: ../Home.php');
 exit;
 ?>

@@ -23,6 +23,28 @@ public function saveLogin ($name, $password) {
     $q->bindParam(":password", $password);
     $q->execute();
   }
+  public function getUser($name, $password){
+  		$conn=$this->getConnection();
+  		$query = $conn->prepare("SELECT name,password FROM users WHERE name = :username AND password= :password");
+  		$query->bindParam(':username', $name);
+  		$query->bindParam(':password', $password);
+  		$query->setFetchMode(PDO::FETCH_ASSOC);
+      	$query->execute();
+      	$results = $query->fetchAll();
+      	return $results;
+  	}
+  	public function addUser($name, $password){
+  		$conn = $this->getConnection();
+  		$query = $conn->prepare("insert into users (username, password) values (:username,:password)");
+  		 $num=0;
+  		 $query->bindParam(':username', $name);
+  		 $query->bindParam(':password', $password);
+  		$query->execute();
+  	}
+  	public function deleteUser($name, $password){
+  	}
+
+
 
 }
 
