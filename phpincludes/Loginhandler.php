@@ -28,7 +28,10 @@ if ($bad) {
 unset($_SESSION['presets']);
 require_once 'Dao.php';
 $dao = new Dao();
-//$dao->saveLogin($name, $password);
+if(_POST['CreateAccount']){
+  $dao->saveLogin($name, $password);
+  echo "here";  
+}
 header('Location: ../Home.php');
 exit;
 ?>
