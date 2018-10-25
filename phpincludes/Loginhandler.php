@@ -23,6 +23,8 @@ if ($bad) {
   header( "Location: ../index.php");
   $_SESSION['validated'] = 'bad';
   exit;
+
+  echo "here firstß";
 }
 // Got here, means everything validated, and the comment will post.
 unset($_SESSION['presets']);
