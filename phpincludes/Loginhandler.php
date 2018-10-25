@@ -29,8 +29,9 @@ unset($_SESSION['presets']);
 require_once 'Dao.php';
 $dao = new Dao();
 if($_POST['name'] == "createButton"){
-  $dao->saveLogin($name, $password);
   echo "here";
+
+  $dao->saveLogin($name, $password);
 }
 header('Location: ../Home.php');
 exit;
