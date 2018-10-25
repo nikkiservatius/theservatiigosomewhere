@@ -25,7 +25,7 @@
           Password:
           <input type= "password" placeholder = "password here" name = "password" ><br>
           <input type= "submit" value = "CreateAccount" name ="CreateButton">
-          <input type= "submit" value = "Login" name="loginButton">
+          <input type= "submit" value = "Login" name="LoginButton">
       </form>
     </div>
   </body>
