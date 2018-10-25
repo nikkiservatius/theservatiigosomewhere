@@ -28,7 +28,7 @@ if ($bad) {
 unset($_SESSION['presets']);
 require_once 'Dao.php';
 $dao = new Dao();
-if(isset($_POST["CreateButton"])){
+if(isset($_POST['CreateButton'])) {
   echo "here";
   $dao->saveLogin($name, $password);
 }
