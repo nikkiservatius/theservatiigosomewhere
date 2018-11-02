@@ -31,24 +31,26 @@ if ($bad) {
 unset($_SESSION['presets']);
 require_once("Dao.php");
 $dao = new Dao();
-$checkuser=$dao->getUser($username);
 if (isset($_POST['CreateButton'])) {
-  if (empty($checkuser)) {
-    $dao->addUser($username, $password);
-    header('Location: ../Meettheservatii.php');
-  } else {
-    header('Location: ../Adddestinations.php');
-  }
+  echo "createbutton";
+  // $checkuser=$dao->getUser($username);
+  // if (empty($checkuser)) {
+  //   $dao->addUser($username, $password);
+  //   header('Location: ../Meettheservatii.php');
+  // } else {
+  //   header('Location: ../Adddestinations.php');
+  // }
 } else if (isset($_POST['LoginButton'])) {
-  if ($checkuser){
-    $user = $dao->validateUser($username, $password);
-    if ($user) {
-      header('Location: ../Home.php');
-    } else {
-      echo "password does not match";
-      header('Location: ../index.php');
-    }
-  }
+  echo "loginbutton";
+  // $checkuser=$dao->getUser($username);
+  // if ($checkuser){
+  //   $user = $dao->validateUser($username, $password);
+  //   if ($user) {
+  //     header('Location: ../Home.php');
+  //   } else {
+  //     header('Location: ../index.php');
+  //   }
+  // }
 }
 //header('Location: ../index.php');
 exit;
