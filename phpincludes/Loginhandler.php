@@ -43,6 +43,6 @@ if ($checkuser){
     $dao->saveLogin($username, $password);
     header('Location: ../Home.php');
 }
-header('Location: ../index.php');
+//header('Location: ../index.php');
 exit;
 ?>
