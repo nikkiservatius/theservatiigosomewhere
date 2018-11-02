@@ -33,11 +33,11 @@ require_once("Dao.php");
 $dao = new Dao();
 $checkuser=$dao->getUser($username);
 if (isset($_POST['CreateButton'])) {
-  if ($checkuser) {
-    echo "username exists";
-  } else {
+  if (empty($checkuser)) {
     $dao->addUser($username, $password);
     header('Location: ../Meettheservatii.php');
+  } else {
+    header('Location: ../Adddestinations.php');
   }
 } else if (isset($_POST['LoginButton'])) {
   if ($checkuser){
