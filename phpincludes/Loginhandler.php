@@ -32,16 +32,23 @@ unset($_SESSION['presets']);
 require_once("Dao.php");
 $dao = new Dao();
 $checkuser=$dao->getUser($username);
-if ($checkuser){
+if (isset($_POST['CreateButton'])) {
+  if ($checkuser) {
+    echo "username exists";
+  } else {
+    $dao->addUser($username, $password);
+    header('Location: ../Meettheservatii.php');
+  }
+} else if (isset($_POST['LoginButton'])) {
+  if ($checkuser){
     $user = $dao->validateUser($username, $password);
     if ($user) {
       header('Location: ../Home.php');
     } else {
+      echo "password does not match";
       header('Location: ../index.php');
     }
-} else {
-    $dao->addUser($username, $password);
-    header('Location: ../Meettheservatii.php');
+  }
 }
 //header('Location: ../index.php');
 exit;
