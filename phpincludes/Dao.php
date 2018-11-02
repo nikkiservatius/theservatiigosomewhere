@@ -11,14 +11,18 @@ class Dao{
 
 }
 
-public function saveLogin($username, $password){
+public function addUser($username, $password){
 			$conn=$this->getConnection();
-			$saveQuery =
-				"INSERT INTO users (username, password) VALUES (:username, :password)";
-			$q=$conn->prepare($saveQuery);
-			$q->bindParam(":username", $username);
-			$q->bindParam(":password", $password);
-			$q->execute();
+			$saveQuery = $conn->prepare(
+				"INSERT INTO users (username, password) VALUES (:username, :password)");
+			$saveQuery->bindParam(":username", $username);
+			$saveQuery->bindParam(":password", $password);
+      try {
+          $q->execute();
+          return true;
+      } catch (PDOExeception $e) {
+          return false;
+      }
   }
   public function getUser($username){
   		$conn=$this->getConnection();
@@ -28,14 +32,14 @@ public function saveLogin($username, $password){
   		return $stmt->fetch();
 
   	}
-  	public function addUser($username, $password){
-  		$conn = $this->getConnection();
-  		$query = $conn->prepare("insert into users (username, password) values (:username,:password)");
-  		 $num=0;
-  		 $query->bindParam(':username', $username);
-  		 $query->bindParam(':password', $password);
-  		$query->execute();
-  	}
+  	// public function addUser($username, $password){
+  	// 	$conn = $this->getConnection();
+  	// 	$query = $conn->prepare("insert into users (username, password) values (:username,:password)");
+  	// 	 $num=0;
+  	// 	 $query->bindParam(':username', $username);
+  	// 	 $query->bindParam(':password', $password);
+  	// 	$query->execute();
+  	// }
   	public function deleteUser($username, $password){
   	}
     public function validateUser($username, $password){

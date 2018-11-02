@@ -40,8 +40,8 @@ if ($checkuser){
       header('Location: ../index.php');
     }
 } else {
-    $dao->saveLogin($username, $password);
-    header('Location: ../Home.php');
+    $dao->addUser($username, $password);
+    header('Location: ../Meettheservatii.php');
 }
 //header('Location: ../index.php');
 exit;
