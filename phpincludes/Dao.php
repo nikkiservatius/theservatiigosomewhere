@@ -11,40 +11,48 @@ class Dao{
 
 }
 
-public function saveLogin ($name, $password) {
-    $conn = $this->getConnection();
-    $saveQuery =
-        "INSERT INTO users
-        (username, password)
-        VALUES
-        (:username, :password)";
-    $q = $conn->prepare($saveQuery);
-    $q->bindParam(":username", $name);
-    $q->bindParam(":password", $password);
-    $q->execute();
+public function saveLogin($username, $password){
+			$conn=$this->getConnection();
+			$saveQuery =
+				"INSERT INTO users (username, password) VALUES (:username, :password)";
+			$q=$conn->prepare($saveQuery);
+			$q->bindParam(":username", $username);
+			$q->bindParam(":password", $password);
+			$q->execute();
   }
-  public function getUser($name, $password){
+  public function getUser($username){
   		$conn=$this->getConnection();
-  		$query = $conn->prepare("SELECT name,password FROM users WHERE name = :username AND password= :password");
-  		$query->bindParam(':username', $name);
-  		$query->bindParam(':password', $password);
-  		$query->setFetchMode(PDO::FETCH_ASSOC);
-      	$query->execute();
-      	$results = $query->fetchAll();
-      	return $results;
+      $stmt = $conn->prepare("SELECT * FROM users WHERE username = :username");
+      $stmt->bindparam(":username", $username);
+      $stmt->execute();
+  		return $stmt->fetch();
+
   	}
-  	public function addUser($name, $password){
+  	public function addUser($username, $password){
   		$conn = $this->getConnection();
   		$query = $conn->prepare("insert into users (username, password) values (:username,:password)");
   		 $num=0;
-  		 $query->bindParam(':username', $name);
+  		 $query->bindParam(':username', $username);
   		 $query->bindParam(':password', $password);
   		$query->execute();
   	}
-  	public function deleteUser($name, $password){
+  	public function deleteUser($username, $password){
   	}
-
-
+    public function validateUser($username, $password){
+      $conn=$this->getConnection();
+      $stmt = $conn->prepare("SELECT * FROM users WHERE username = :username");
+      $stmt->bindparam(":username", $username);
+      $stmt->execute();
+      $user = $stmt->fetch();
+      if ($user){
+        $digest = $user['password'];
+          if(password_verify($password, $digest)){
+            return true;
+          }
+          return false;
+      }
+      return false;
+    }
 
 }
 

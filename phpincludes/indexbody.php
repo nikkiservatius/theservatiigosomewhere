@@ -21,11 +21,11 @@
       <form method = POST action = "phpincludes/Loginhandler.php">
           <h5>
             Username:
-            <input type= "text" placeholder = "username here" name = "name"><br>
+            <input type= "text" placeholder = "username here" name = "username"><br>
           Password:
           <input type= "password" placeholder = "password here" name = "password" ><br>
-          <input type= "submit" value = "CreateAccount" name ="CreateButton">
-          <input type= "submit" value = "Login" name="LoginButton">
+          <button type= "submit" value = "CreateAccount" name ="CreateButton"> Create Account</button>
+          <button type= "submit" value = "Login" name="LoginButton"> Login</button>
       </form>
     </div>
   </body>

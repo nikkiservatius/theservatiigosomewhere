@@ -1,17 +1,18 @@
 <?php
+echo "here";
 session_start();
 header("Location: ../index.php");
 
 
-$name = $_POST['name'];
+$username = $_POST['username'];
 $password = $_POST['password'];
-$_SESSION['presets']['name'] = $name;
+$_SESSION['presets']['username'] = $username;
 
 
 $messages = array();
 
 $bad = false;
-if (strlen($name) == 0) {
+if (strlen($username) == 0) {
   $_SESSION['messages'][] = "Name is required.";
   $bad = true;
 }
@@ -28,12 +29,20 @@ if ($bad) {
 }
 // Got here, means everything validated, and the comment will post.
 unset($_SESSION['presets']);
-require_once('Dao.php');
+require_once("Dao.php");
 $dao = new Dao();
-if(isset($_POST['CreateButton'])) {
-  echo "here";
-  $dao->saveLogin($name, $password);
+$checkuser=$dao->getUser($username);
+if ($checkuser){
+    $user = $dao->validateUser($username, $password);
+    if ($user) {
+      header('Location: ../Home.php');
+    } else {
+      header('Location: ../index.php');
+    }
+} else {
+    $dao->saveLogin($username, $password);
+    header('Location: ../Home.php');
 }
-header('Location: ../Home.php');
+header('Location: ../index.php');
 exit;
 ?>
