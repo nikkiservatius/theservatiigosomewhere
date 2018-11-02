@@ -21,7 +21,7 @@ if (strlen($password) == 0) {
   $bad = true;
 }
 if ($bad) {
-  header( "Location: ../index.php");
+  //header( "Location: ../index.php");
   $_SESSION['validated'] = 'bad';
   exit;
 
@@ -40,6 +40,7 @@ if (isset($_POST['CreateButton'])) {
   // } else {
   //   header('Location: ../Adddestinations.php');
   // }
+  exit;
 } else if (isset($_POST['LoginButton'])) {
   echo "loginbutton";
   // $checkuser=$dao->getUser($username);
@@ -51,6 +52,7 @@ if (isset($_POST['CreateButton'])) {
   //     header('Location: ../index.php');
   //   }
   // }
+  exit;
 }
 //header('Location: ../index.php');
 exit;
