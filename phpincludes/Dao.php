@@ -50,7 +50,7 @@ public function addUser($username, $password){
       $user = $stmt->fetch();
       if ($user){
         $digest = $user['password'];
-          if(password_verify($password, $digest)){
+          if($password == $digest){
             return true;
           }
           return false;
