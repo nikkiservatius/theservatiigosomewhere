@@ -1,4 +1,4 @@
-<?php $thisPage = 'Home'; ?>
+<?php $thisPage = "Home"; ?>
 
 <div class = "bodytext">
 

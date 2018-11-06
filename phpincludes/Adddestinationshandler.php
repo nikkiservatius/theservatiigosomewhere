@@ -1,6 +1,6 @@
 <?php
 session_start();
-header("Location: ../index.php");
+
 
 $city = $_POST['city'];
 $state = $_POST['state'];

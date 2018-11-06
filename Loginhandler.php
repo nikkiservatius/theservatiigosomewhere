@@ -1,7 +1,7 @@
 <?php
-//echo "here";
+
 session_start();
-//header('Location: index.php');
+
 
 
 $username = $_POST['username'];
@@ -43,16 +43,9 @@ if (isset($_POST['CreateButton'])) {
 		}else{
 			$_SESSION['messages'][]= "That username already exists";
       $bad = true;
-			//header('Location: index.php');
-			//exit;
+
 		}
-  // $checkuser=$dao->getUser($username);
-  // if (empty($checkuser)) {
-  //   $dao->addUser($username, $password);
-  //   header('Location: ../Meettheservatii.php');
-  // } else {
-  //   header('Location: ../Adddestinations.php');
-  // }
+
 
 } else if (isset($_POST['LoginButton'])) {
 
@@ -64,26 +57,17 @@ if (isset($_POST['CreateButton'])) {
       $_SESSION['messages'][] = "Username or Password is incorrect.";
 			header('Location: index.php');
 			exit;
-  //echo "loginbutton";
-  // $checkuser=$dao->getUser($username);
-  // if ($checkuser){
-  //   $user = $dao->validateUser($username, $password);
-  //   if ($user) {
-  //     header('Location: ../Home.php');
-  //   } else {
-  //     header('Location: ../index.php');
-  //   }
-  // }
+
   exit;
 }
 }
 if ($bad) {
   header( 'Location: index.php');
-  //$_SESSION['validated'] = 'bad';
+
   exit;
 
 
 }
-//header('Location: ../index.php');
+
 exit;
 ?>
