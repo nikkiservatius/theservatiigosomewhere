@@ -1,7 +1,7 @@
 <?php
-echo "here";
+//echo "here";
 session_start();
-header('Location: index.php');
+//header('Location: index.php');
 
 
 $username = $_POST['username'];
@@ -26,16 +26,18 @@ if (strlen($password) == 0) {
 
 // Got here, means everything validated, and the comment will post.
 unset($_SESSION['presets']);
-require_once 'Dao.php';
+require_once("Dao.php");
+
 $dao = new Dao();
 
 if (isset($_POST['CreateButton'])) {
-
-
   $user=$dao->getUsername($username);
+
 		//if the number of rows in my table with that username are zero, then create a row for the username and password.
 		if(empty($user)){
 			$dao->addUser($username, $password);
+      echo "here";
+
 			header('Location: Home.php');
 			exit;
 		}else{
@@ -55,7 +57,7 @@ if (isset($_POST['CreateButton'])) {
 } else if (isset($_POST['LoginButton'])) {
 
   $login=$dao->getUserPassword($username, $password);
-		if($login){
+		if(!empty($login)){
 			header('Location: Home.php');
 			exit;
 		}else{

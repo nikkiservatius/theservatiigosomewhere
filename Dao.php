@@ -5,6 +5,9 @@ class Dao{
   private $user = "bfecb98047ad0d";
   private $pass = "f6b96ffa";
 
+  public function __construct(){
+  	}
+
   public function getConnection () {
     return new PDO("mysql:host=us-cdbr-iron-east-01.cleardb.net;dbname=heroku_9b079b48391d866", "bfecb98047ad0d",
           "f6b96ffa");
@@ -18,12 +21,11 @@ public function addUser($username, $password){
 				"INSERT INTO users (username, password) VALUES (:username, :password)");
 			$saveQuery->bindParam(":username", $username);
 			$saveQuery->bindParam(":password", $password);
-      try {
-          $q->execute();
-          return true;
-      } catch (PDOExeception $e) {
-          return false;
-      }
+      $saveQuery->execute();
+  //        return true;
+    //  } catch (PDOExeception $e) {
+      //    return false;
+      //}
   }
   public function getUsername($username){
   		$conn=$this->getConnection();
@@ -31,10 +33,10 @@ public function addUser($username, $password){
       $stmt->bindparam(":username", $username);
       $stmt->execute();
   		return $stmt->fetch();
-
+}
   public function getUserPassword($username, $password){
 		$conn=$this->getConnection();
-		$q=$conn->prepare("select username from user where username='$username' and password='$password'");
+		$q=$conn->prepare("SELECT username FROM users WHERE username=:username AND password=:password");
 		$q->bindParam(":username", $username);
 		$q->bindParam(":password", $password);
 		$q->setFetchMode(PDO::FETCH_ASSOC);
@@ -55,7 +57,7 @@ public function addUser($username, $password){
 
 	}
 
-  	}
+
   	// public function addUser($username, $password){
   	// 	$conn = $this->getConnection();
   	// 	$query = $conn->prepare("insert into users (username, password) values (:username,:password)");
@@ -83,8 +85,4 @@ public function addUser($username, $password){
     }
 
 }
-
-
-
-
 ?>
