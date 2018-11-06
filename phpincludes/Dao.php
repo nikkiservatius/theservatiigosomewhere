@@ -27,7 +27,7 @@ public function addUser($username, $password){
   }
   public function getUsername($username){
   		$conn=$this->getConnection();
-      $stmt = $conn->prepare("SELECT * FROM users WHERE username = :username");
+      $stmt = $conn->prepare("SELECT username FROM users WHERE username = :username");
       $stmt->bindparam(":username", $username);
       $stmt->execute();
   		return $stmt->fetch();
