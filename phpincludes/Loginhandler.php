@@ -1,7 +1,7 @@
 <?php
-//echo "here";
+echo "here";
 session_start();
-//header("Location: index.php");
+header("Location: index.php");
 
 
 $username = $_POST['username'];
@@ -24,7 +24,7 @@ if (strlen($password) == 0) {
   $bad = true;
 }
 if ($bad) {
-  header( 'Location: ../index.php');
+  header( 'Location: index.php');
   //$_SESSION['validated'] = 'bad';
   exit;
 

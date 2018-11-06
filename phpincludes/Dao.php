@@ -32,11 +32,11 @@ public function addUser($username, $password){
       $stmt->execute();
   		return $stmt->fetch();
 
-  public function getUserPassword($name, $pass){
+  public function getUserPassword($username, $password){
 		$conn=$this->getConnection();
-		$q=$conn->prepare("select username from user where username='$name' and password='$pass'");
-		$q->bindParam(":username", $name);
-		$q->bindParam(":password", $pass);
+		$q=$conn->prepare("select username from user where username='$username' and password='$password'");
+		$q->bindParam(":username", $username);
+		$q->bindParam(":password", $password);
 		$q->setFetchMode(PDO::FETCH_ASSOC);
 		$q->execute();
 		$result=$q->fetchAll();
