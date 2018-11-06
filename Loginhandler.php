@@ -1,7 +1,7 @@
 <?php
 echo "here";
 session_start();
-header("Location: index.php");
+header('Location: index.php');
 
 
 $username = $_POST['username'];
@@ -64,7 +64,7 @@ if (isset($_POST['CreateButton'])) {
 			header('Location: Home.php');
 			exit;
 		}else{
-			$_SESSION['messages'][] = "Username or Password is incorrect.";
+      $_SESSION['messages'][] = "Username or Password is incorrect.";
 			header('Location: index.php');
 			exit;
   //echo "loginbutton";

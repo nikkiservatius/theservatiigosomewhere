@@ -18,7 +18,7 @@
             ?>
           <?php } ?>
 
-      <form method = POST action = "phpincludes/Loginhandler.php">
+      <form method = POST action = 'Loginhandler.php'>
           <h5>
             Username:
             <input type= "text" placeholder = "username here" name = "username"><br>
