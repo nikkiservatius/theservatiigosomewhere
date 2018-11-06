@@ -23,13 +23,7 @@ if (strlen($password) == 0) {
   $_SESSION['messages'][] = "Password is required.";
   $bad = true;
 }
-if ($bad) {
-  header( 'Location: index.php');
-  //$_SESSION['validated'] = 'bad';
-  exit;
 
-
-}
 // Got here, means everything validated, and the comment will post.
 unset($_SESSION['presets']);
 require_once 'Dao.php';
@@ -46,8 +40,9 @@ if (isset($_POST['CreateButton'])) {
 			exit;
 		}else{
 			$_SESSION['messages'][]= "That username already exists";
-			header('Location: index.php');
-			exit;
+      $bad = true;
+			//header('Location: index.php');
+			//exit;
 		}
   // $checkuser=$dao->getUser($username);
   // if (empty($checkuser)) {
@@ -79,6 +74,13 @@ if (isset($_POST['CreateButton'])) {
   // }
   exit;
 }
+}
+if ($bad) {
+  header( 'Location: index.php');
+  //$_SESSION['validated'] = 'bad';
+  exit;
+
+
 }
 //header('Location: ../index.php');
 exit;
