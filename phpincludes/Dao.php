@@ -11,6 +11,7 @@ class Dao{
 
 }
 
+
 public function addUser($username, $password){
 			$conn=$this->getConnection();
 			$saveQuery = $conn->prepare(
@@ -24,12 +25,35 @@ public function addUser($username, $password){
           return false;
       }
   }
-  public function getUser($username){
+  public function getUsername($username){
   		$conn=$this->getConnection();
       $stmt = $conn->prepare("SELECT * FROM users WHERE username = :username");
       $stmt->bindparam(":username", $username);
       $stmt->execute();
   		return $stmt->fetch();
+
+  public function getUserPassword($name, $pass){
+		$conn=$this->getConnection();
+		$q=$conn->prepare("select username from user where username='$name' and password='$pass'");
+		$q->bindParam(":username", $name);
+		$q->bindParam(":password", $pass);
+		$q->setFetchMode(PDO::FETCH_ASSOC);
+		$q->execute();
+		$result=$q->fetchAll();
+		return $result;
+	}
+
+  public function saveDestination($city, $country, $state){
+			$conn=$this->getConnection();
+			$saveQuery=
+				"INSERT INTO destinations_input (city, country, state) VALUES (:city, :country, :state)";
+			$q=$conn->prepare($saveQuery);
+			$q->bindParam(":city", $city);
+			$q->bindParam(":country", $country);
+			$q->bindParam(":state", $state);
+			$q->execute();
+
+	}
 
   	}
   	// public function addUser($username, $password){
