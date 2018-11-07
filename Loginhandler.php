@@ -61,7 +61,7 @@
 	//All is good
 	unset($_SESSION['presets']);
 
-	//header('Location: MMLogin.php');
+
 	exit;
 
 ?>
