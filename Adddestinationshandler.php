@@ -1,12 +1,12 @@
 <?php
 	session_start();
-	$username = $_POST['username'];
-	$password = $_POST['password'];
+	$city = $_POST['city'];
+	$state = $_POST['state'];
+  $country = $_POST['country'];
 
 	$messages = array();
 	$bad = false;
-
-	$_SESSION['presets']['username'] = $username;
+  
 
 	if(empty($username)){
 		$_SESSION['messages'][] = "Username is Required";
