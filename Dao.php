@@ -57,15 +57,6 @@ public function addUser($username, $password){
 
 	}
 
-
-  	// public function addUser($username, $password){
-  	// 	$conn = $this->getConnection();
-  	// 	$query = $conn->prepare("insert into users (username, password) values (:username,:password)");
-  	// 	 $num=0;
-  	// 	 $query->bindParam(':username', $username);
-  	// 	 $query->bindParam(':password', $password);
-  	// 	$query->execute();
-  	// }
   	public function deleteUser($username, $password){
   	}
     public function validateUser($username, $password){

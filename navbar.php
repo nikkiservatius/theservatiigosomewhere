@@ -10,5 +10,7 @@
       <a href="Adddestinations.php">Add Destination</a></li>
     <li> <?php if ($thisPage == "Vote") echo ' id=\"currentpage\"'; ?>
       <a href="Vote.php">VOTE</a></li>
+    <li> <?php if ($thisPage == "Logout") echo ' id=\"currentpage\"'; ?>
+        <a href="Logout.php">Logout</a></li>
   </ul>
 </div>
