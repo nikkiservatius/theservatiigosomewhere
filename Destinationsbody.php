@@ -1,5 +1,6 @@
 <?php $thisPage = "Destinations";
 
+require_once "Dao.php";
 $dao = new Dao();
 $destinations = $dao->getDestination();
 
@@ -12,7 +13,8 @@ $destinations = $dao->getDestination();
 
     <?php
       foreach ($destinations as $destination)
-        {echo "<tr>
+        {
+          echo "<tr>
                   <td>
                       City: " . htmlentities($destination['city']) . "<br>
                       State: " . htmlentities($destination['state']) . "<br>
