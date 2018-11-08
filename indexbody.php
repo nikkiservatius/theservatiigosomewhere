@@ -21,7 +21,7 @@
       <form method = POST action = 'Loginhandler.php'>
           <h5>
             Username:
-            <input type= "text" placeholder = "username here" name = "username"><br>
+<input type="text" name="username" id="username" value="<?php echo isset($_SESSION['presets']['username']) ? $_SESSION['presets']['username'] : ''; ?>"><br>
           Password:
           <input type= "password" placeholder = "password here" name = "password" ><br>
           <button type= "submit" value = "CreateAccount" name ="CreateButton"> Create Account</button>
