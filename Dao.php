@@ -47,12 +47,13 @@ public function addUser($username, $password){
 
   public function saveDestination($city, $state, $country){
   			$conn=$this->getConnection();
-  			$saveQuery = $conn->prepare(
-  				"INSERT INTO destinations_input (city, state, country) VALUES (:city, :state, :country)");
-  			$saveQuery->bindParam(":city", $city);
-  			$saveQuery->bindParam(":state", $state);
-        $saveQuery->bindParam(":country", $country);
-        $saveQuery->execute();
+  			$saveQuery =
+  				"INSERT INTO destinations_input (city, state, country) VALUES (:city, :state, :country)";
+          $q=$conn->prepare($saveQuery);
+        $q->bindParam(":city", $city);
+  			$q->bindParam(":state", $state);
+        $q->bindParam(":country", $country);
+        $q->execute();
 
 	}
 
