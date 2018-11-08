@@ -22,10 +22,10 @@
 		$bad = true;
 	}
   if($country == "United States" && (empty($state))){
-    $bad = false;
-  }else if ($country || "United States" && (empty($state))) {
-      $_SESSION['messages'][] = "State is Required";
-  		$bad = true;
+    $_SESSION['messages'][] = "State is Required";
+    $bad = true;
+  }else if ($country != "United States" && (empty($state))) {
+  		$bad = false;
     }
 
 
