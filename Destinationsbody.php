@@ -18,7 +18,8 @@ $destinations = $dao->getDestination();
                   <td>
                       City: " . htmlentities($destination['city']) . "<br>
                       State: " . htmlentities($destination['state']) . "<br>
-                      Country: " . htmlentities($destination['country']) . "<br>
+                      Country: " . htmlentities($destination['country']) . "<br><br>
+                      <hr>
           </td>
         </tr>";
         }
