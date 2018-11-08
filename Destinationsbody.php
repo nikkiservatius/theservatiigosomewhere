@@ -10,9 +10,9 @@ $destinations = $dao->getDestination();
 
 <body>
   <table>
-
+<div class = "bodytext">
     <?php
-    <div class = "bodytext">
+
       foreach ($destinations as $destination)
         {
           echo "<tr>
