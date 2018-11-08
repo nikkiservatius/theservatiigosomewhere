@@ -17,13 +17,13 @@
 		$_SESSION['messages'][] = "Country is Required";
 		$bad = true;
 	}
-  if($country =="United States"&& (empty($state))){
+  if($country == "United States" && (empty($state))){
     $bad = false;
-    elseif (empty($state)) {
+  }else if (empty($state)) {
       $_SESSION['messages'][] = "Country is Required";
   		$bad = true;
     }
-  }
+
 
 	if($bad){
 		header('Location: Adddestinations.php');
@@ -33,18 +33,18 @@
 	require_once 'Dao.php';
 
 	$dao = new DAO();
+
 	if(isset($_POST['SubmitDestination'])){
 		$location=$dao->saveDestination($city, $state, $country);
 		if(!empty($location)){
 			$dao->saveDestination($city, $state, $country);
 			header('Location: Destinations.php');
-      else{
+    }else{
         header('Location: Adddestinations.php' )
-      }
 			exit;
 		}
+}
 
-	}
 
 	exit;
 
