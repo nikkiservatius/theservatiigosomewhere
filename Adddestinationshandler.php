@@ -18,7 +18,6 @@
 		$bad = true;
 	}
   if($country =="United States"&& (empty($state))){
-
     $bad = false;
     elseif (empty($state)) {
       $_SESSION['messages'][] = "Country is Required";
@@ -46,9 +45,6 @@
 		}
 
 	}
-
-	//All is good
-	unset($_SESSION['presets']);
 
 	exit;
 
