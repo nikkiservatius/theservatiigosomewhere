@@ -23,8 +23,8 @@
 	}
   if($country == "United States" && (empty($state))){
     $bad = false;
-  }else if (empty($state)) {
-      $_SESSION['messages'][] = "Country is Required";
+  }else if ($country || "United States" && (empty($state))) {
+      $_SESSION['messages'][] = "State is Required";
   		$bad = true;
     }
 
@@ -39,18 +39,11 @@ unset($_SESSION['presets']);
 	$dao = new DAO();
 
 	if(isset($_POST['SubmitDestination'])){
-		$location=$dao->saveDestination($city, $state, $country);
-    echo $saved;
-		if(!empty($location)){
-			$dao->saveDestination($city, $state, $country);
-			header('Location: Destinations.php');
-    }else{
-        header('Location: Adddestinations.php' )
-			exit;
-		}
+		$dao->saveDestination($city, $state, $country);
+		$_SESSION['messages'][]="Thanks for the destination submission!"
 }
 
-
+header('Location: Destinations.php');
 	exit;
 
 ?>
