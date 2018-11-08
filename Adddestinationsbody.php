@@ -255,6 +255,6 @@ session_start();?>
 </select>
 
   <br><br>
-  <button type="submit" value="Submit Destination" name="SubmitDestination">
+  <button type="submit" value="Submit Destination" name="SubmitDestination">Submit Destination</button>
 </form>
 </div>
