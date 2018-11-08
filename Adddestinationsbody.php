@@ -1,6 +1,7 @@
 <?php $thisPage = "Adddestinations";
 
-session_start();?>
+session_start();
+?>
 
 <div class = "bodytext">
   <form method = POST action = "Adddestinationshandler.php">

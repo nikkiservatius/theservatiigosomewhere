@@ -1,10 +1,28 @@
-<?php $thisPage = "Destinations"; ?>
+<?php $thisPage = "Destinations";
 
-<div class = "bodytext">
-A list of destinations will be here - this data is pulled from a table of user input.
+$dao = new Dao();
+$destinations = $dao->getDestination();
 
-//<?php require_once "maketable.php";
-    //render_table("destination.txt");
-      //?>
+?>
 
-</div>
+<html>
+
+<body>
+  <table>
+
+    <?php
+      foreach ($destinaitons as $destination)
+        {echo "<tr>
+                  <td>
+                      City: " . htmlentities($destination['city']) . "<br>
+                      State: " . htmlentities($destination['state']) . "<br>
+                      Country: " . htmlentities($destination['country']) . "<br>
+          </td>
+        </tr>";
+        }
+
+    ?>
+  </table>
+</body>
+
+</html>
