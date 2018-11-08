@@ -52,7 +52,7 @@ background-color: #6E6658;
 font-weight: 600;
 font-size: 15px;
 font-family: "Open Sans Condensed";
-letter-spacing: 10px;
+letter-spacing: 5px;
 margin: 0;
 padding: 0;
 boarder: 0;
@@ -70,7 +70,7 @@ ul {
 
 li {
     float: left;
-    margin-right: 60px;
+    margin-right: 40px;
     font-size: 20px;
     font-family: "Open Sans Condensed";
 
@@ -80,7 +80,7 @@ li a {
     display: block;
     color: white;
     text-align: left;
-    padding: 6px;
+    padding: 16px;
     text-decoration: none;
 }
 
