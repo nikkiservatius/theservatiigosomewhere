@@ -1,9 +1,34 @@
-<?php $thisPage = "Vote"; ?>
+<?php $thisPage = "Vote";
 
-<div class = "bodytext">
-  <form>
-  <input type="radio" name="destination selection" value="Rio De Janeiro" checked> Rio De Janeiro<br>
-  <input type="radio" name="destination selection" value="My Grandma's House, Kansas City, Kansas"> My Grandma's House, Kansas City, Kansas<br>
-  <input type="radio" name="destination selection" value="Antarctica"> Antarctica<br>
+require_once "Dao.php";
+$dao = new Dao();
+$destinations = $dao->getDestination();
+
+?>
+
+<html>
+
+<body>
+  <table>
+
+    <?php
+      foreach ($destinations as $destination)
+        {
+          echo "<tr>
+                  <td>
+                      City: " . htmlentities($destination['city']) . "<br>
+                      State: " . htmlentities($destination['state']) . "<br>
+                      Country: " . htmlentities($destination['country']) . "<br><br>
+                      <hr>
+          </td>
+        </tr>";
+        }
+
+    ?>
+  </table>
+<br>
+  <button type="submit" value="Submit Vote" name="SubmitVote">Submit Vote</button>
 </form>
-</div>
+</body>
+
+</html>

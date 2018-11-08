@@ -12,6 +12,7 @@ $destinations = $dao->getDestination();
   <table>
 
     <?php
+    <div class = "bodytext">
       foreach ($destinations as $destination)
         {
           echo "<tr>
