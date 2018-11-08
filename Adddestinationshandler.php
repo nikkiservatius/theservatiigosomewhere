@@ -1,11 +1,15 @@
 <?php
 	session_start();
+
 	$city = $_POST['city'];
 	$state = $_POST['state'];
   $country = $_POST['country'];
 
 	$messages = array();
 	$bad = false;
+
+  $_SESSION['presets']['city'] = $city;
+  $_SESSION['presets']['state'] = $state;
 
 
 	if(empty($city)){
@@ -29,13 +33,14 @@
 		header('Location: Adddestinations.php');
 		exit;
 	}
-
+unset($_SESSION['presets']);
 	require_once 'Dao.php';
 
 	$dao = new DAO();
 
 	if(isset($_POST['SubmitDestination'])){
 		$location=$dao->saveDestination($city, $state, $country);
+    echo $saved;
 		if(!empty($location)){
 			$dao->saveDestination($city, $state, $country);
 			header('Location: Destinations.php');
