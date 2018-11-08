@@ -5,6 +5,10 @@
 	$state = $_POST['state'];
   $country = $_POST['country'];
 
+echo $country;
+
+exit;
+/*
 	$messages = array();
 	$bad = false;
 
