@@ -20,7 +20,7 @@ $destinations = $dao->getDestination();
                       State: " . htmlentities($destination['state']) . "<br>
                       Country: " . htmlentities($destination['country']) . "<br><br>
 
-                        <input type="radio" name="votedestination" value="id"> 'city','state','country'<br>
+                        <input type="."radio"." name="."votedestination"." value="."id"."> <br>
                       <hr>
           </td>
         </tr>";
