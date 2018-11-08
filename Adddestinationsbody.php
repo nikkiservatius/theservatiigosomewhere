@@ -3,7 +3,7 @@
 session_start();?>
 
 <div class = "bodytext">
-  <formmethod = POST action = "Adddestinationshandler.php">
+  <form method = POST action = "Adddestinationshandler.php">
   City:<br>
   <input type="text" name="city"><br>
   State:<br>
