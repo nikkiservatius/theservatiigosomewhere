@@ -40,7 +40,7 @@ unset($_SESSION['presets']);
 
 	if(isset($_POST['SubmitDestination'])){
 		$dao->saveDestination($city, $state, $country);
-		$_SESSION['messages'][]="Thanks for the destination submission!"
+		$_SESSION['messages'][]="Thanks for the destination submission!";
 }
 
 header('Location: Destinations.php');
