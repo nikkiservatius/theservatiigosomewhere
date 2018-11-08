@@ -75,7 +75,7 @@ public function addUser($username, $password){
         $q->bindParam(":state", $state);
         $q->bindParam(":country", $country);
         $q->execute();
-
+}
 
 
   	public function deleteUser($username, $password){
