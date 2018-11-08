@@ -8,9 +8,10 @@ $destinations = $dao->getDestination();
 
 <html>
 
+<div class = "bodytext">
 <body>
   <table>
-<div class = "bodytext">
+
     <?php
 
       foreach ($destinations as $destination)
