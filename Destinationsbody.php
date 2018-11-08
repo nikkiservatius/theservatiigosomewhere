@@ -11,7 +11,7 @@ $destinations = $dao->getDestination();
   <table>
 
     <?php
-      foreach ($destinaitons as $destination)
+      foreach ($destinations as $destination)
         {echo "<tr>
                   <td>
                       City: " . htmlentities($destination['city']) . "<br>
