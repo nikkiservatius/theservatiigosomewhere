@@ -35,10 +35,13 @@
 
 	$dao = new DAO();
 	if(isset($_POST['SubmitDestination'])){
-		$location=$dao->Adddestinations($city, $state, $country);
+		$location=$dao->saveDestination($city, $state, $country);
 		if(empty($location)){
-			$dao->addDestinations($city, $state, $country);
-			header('Location: Destinations.php');
+			$dao->saveDestination($city, $state, $country);
+			header('Location: Adddestinations.php');
+      else{
+        header('Location: Destinations.php' )
+      }
 			exit;
 		}
 
