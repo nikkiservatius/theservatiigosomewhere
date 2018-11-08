@@ -66,6 +66,17 @@ public function addUser($username, $password){
 		return $result;
 	}
 
+  public function saveVote($city, $state, $country){
+        $conn=$this->getConnection();
+        $saveQuery =
+          "INSERT INTO destinations_input (city, state, country) VALUES (:city, :state, :country)";
+          $q=$conn->prepare($saveQuery);
+        $q->bindParam(":city", $city);
+        $q->bindParam(":state", $state);
+        $q->bindParam(":country", $country);
+        $q->execute();
+
+
 
   	public function deleteUser($username, $password){
   	}
