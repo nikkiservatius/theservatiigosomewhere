@@ -1,20 +1,26 @@
-<?php $thisPage == "Home"; ?>
-<?php
-//if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
-		//header('Location: Home.php');
-		//exit;
-//  }
-  ?>
 
-<div class = "headingtitle">
+<?php $thisPage = "Meettheservatii"; ?>
 
-WELCOME!
+<h1>
 
+
+<div class = "whereintheworld">
+
+<link rel="icon" href="whereintheworld.png" type = "image/gif">
+
+  <img src="whereintheworld.png" style="width:600px;height:450px;">
+
+</div>
 
 <div class = "bodytext">
-
-
-This is a website where you can help us decide where we are going to travel next!
-
-Please feel free to learn about us, see the current destinaitons you can vote for, add new destinations to the list of possibilities and of course, VOTE on your favorite place you would like to see us go!
-</div>
+<br>Welcome!</br>
+<br>
+Our names are Kyle and Nikki Servatius. We are in our late 20's and love to travel. Kyle is close to finishing a travel item on his bucketlist of traveling to every major continent by the time he is 30. He has traveled to many countries in Europe, Thailand, Cambodia, Peru, New Zealand, Mexico and many places domestically. Nikki has lived on both east and west coasts as well as in Tanzania for two and a half years as a Peace Corps Volunteer as an education extension officer. We spent our early years exploring and finally found each other in 2016.</br>
+<br>
+Kyle is a registered nurse and has his MBA, so he runs the family health clinic at Micron. Nikki is a high school mathematics and computer science teacher at Pathways in Education, an public charter school in Nampa.<br>
+<br>
+We have traveled to Puerto Rico, California, Mexico and to many National Parks together, but our traveling is far from over.</br>
+<br>
+We recently tied the knot (Summer 2018), but since Nikki is working on her Masters degree and an additional teaching endorsement, we have not had an opportunity to go on a honeymoon. That's where you come in.
+</br>
+</h1>
