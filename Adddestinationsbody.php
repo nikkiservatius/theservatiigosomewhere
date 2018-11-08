@@ -9,7 +9,7 @@ session_start();?>
   State:<br>
   <input type="text" name="state"><br>
   Country:<br>
-  <select name="Country">
+  <select name="country">
 <option value="" selected="selected">Select Country</option>
 <option value="United States">United States</option>
 <option value="United Kingdom">United Kingdom</option>
@@ -255,6 +255,6 @@ session_start();?>
 </select>
 
   <br><br>
-  <input type="submit" value="Submit Destination" name="SubmitDestination">
+  <button type="submit" value="Submit Destination" name="SubmitDestination">
 </form>
 </div>

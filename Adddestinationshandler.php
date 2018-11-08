@@ -6,62 +6,47 @@
 
 	$messages = array();
 	$bad = false;
-  
 
-	if(empty($username)){
-		$_SESSION['messages'][] = "Username is Required";
+
+	if(empty($city)){
+		$_SESSION['messages'][] = "City is Required";
 		$bad = true;
 	}
 
-	if(empty($password)){
-		$_SESSION['messages'][] = "Password is Required";
+	if(empty($country)){
+		$_SESSION['messages'][] = "Country is Required";
 		$bad = true;
 	}
+  if($country =="United States"&& (empty($state))){
 
-	if (!preg_match('~[1-9]~', $password)||!preg_match('~[A-Z]~', $password)) {
-		$_SESSION['messages'][] = "Password must have at least one number and one uppercase letter.";
-		$bad=true;
-	}
+    $bad = false;
+    elseif (empty($state)) {
+      $_SESSION['messages'][] = "Country is Required";
+  		$bad = true;
+    }
+  }
 
 	if($bad){
-		header('Location: index.php');
+		header('Location: Adddestinations.php');
 		exit;
 	}
 
 	require_once 'Dao.php';
 
 	$dao = new DAO();
-	if(isset($_POST['CreateButton'])){
-		$user=$dao->getUsername($username);
-		if(empty($user)){
-			$dao->addUser($username, $password);
-			$_SESSION['logged_in']=true;
-			header('Location: Home.php');
-			exit;
-		}else{
-			$_SESSION['messages'][]="That username already exists";
-			$_SESSION['logged_in']=false;
-			header('Location: index.php');
+	if(isset($_POST['SubmitDestination'])){
+		$location=$dao->Adddestinations($city, $state, $country);
+		if(empty($location)){
+			$dao->addDestinations($city, $state, $country);
+			header('Location: Destinations.php');
 			exit;
 		}
-	}else if (isset($_POST['LoginButton'])){
-		$login=$dao->getUserPassword($username, $password);
-		if($login){
-			$_SESSION['logged_in']=true;
-			header('Location: Home.php');
-			exit;
-		}else{
-			$_SESSION['messages'][]="Username or Password is incorrect.";
-			$_SESSION['logged_in']=false;
-			header('Location: index.php');
-			exit;
-		}
+
 	}
 
 	//All is good
 	unset($_SESSION['presets']);
 
-	//header('Location: MMLogin.php');
 	exit;
 
 ?>

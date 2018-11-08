@@ -49,11 +49,11 @@ public function addUser($username, $password){
 			$conn=$this->getConnection();
 			$saveQuery=
 				"INSERT INTO destinations_input (city, country, state) VALUES (:city, :country, :state)";
-			$q=$conn->prepare($saveQuery);
-			$q->bindParam(":city", $city);
-			$q->bindParam(":country", $country);
-			$q->bindParam(":state", $state);
-			$q->execute();
+			$saveQuery=$conn->prepare($saveQuery);
+			$saveQuery->bindParam(":city", $city);
+			$saveQuery->bindParam(":country", $country);
+			$saveQuery->bindParam(":state", $state);
+			$saveQuery->execute();
 
 	}
 
