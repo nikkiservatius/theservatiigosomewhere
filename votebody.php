@@ -23,6 +23,9 @@ $destinations = $dao->getDestination();
                         <input type="."radio"." name="."votedestination"." value="."id"."> <br>
                       <hr>
           </td>
+<td>
+<input type="."radio"." name="."votedestination"." value="."id"."> <br>
+        </td>  
         </tr>";
         }
 
