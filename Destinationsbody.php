@@ -26,6 +26,8 @@ $destinations = $dao->getDestination();
         }
 
     ?>
+
+  </div>
   </table>
 </body>
 
