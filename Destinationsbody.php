@@ -1,5 +1,10 @@
 <?php $thisPage = "Destinations";
 
+if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
+		header('Location: index.php');
+		exit;
+	}
+
 require_once "Dao.php";
 $dao = new Dao();
 $destinations = $dao->getDestination();
