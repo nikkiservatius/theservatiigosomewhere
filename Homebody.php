@@ -1,9 +1,9 @@
 <?php $thisPage = "Home"; ?>
 <?php
-if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
-		header('Location: Home.php');
-		exit;
-  }
+//if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
+		//header('Location: Home.php');
+		//exit;
+//  }
   ?>
 
 <div class = "bodytext">
