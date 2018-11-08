@@ -59,7 +59,7 @@ public function addUser($username, $password){
 
   public function getDestination(){
 		$conn=$this->getConnection();
-		$q=$conn->prepare("SELECT city, state, country from destination_input order by id desc");
+		$q=$conn->prepare("SELECT city, state, country from destinations_input order by id desc");
 		$q->setFetchMode(PDO::FETCH_ASSOC);
 		$q->execute();
 		$result=$q->fetchAll();
