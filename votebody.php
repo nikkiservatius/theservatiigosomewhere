@@ -7,7 +7,7 @@ $destinations = $dao->getDestination();
 ?>
 
 <html>
-
+<div class = "bodytext">
 <body>
   <table>
 
@@ -20,7 +20,7 @@ $destinations = $dao->getDestination();
                       State: " . htmlentities($destination['state']) . "<br>
                       Country: " . htmlentities($destination['country']) . "<br><br>
 
-  
+
                       <hr>
           </td>
 <td>
@@ -35,5 +35,5 @@ $destinations = $dao->getDestination();
   <button type="submit" value="Submit Vote" name="SubmitVote">Submit Vote</button>
 </form>
 </body>
-
+</div>
 </html>

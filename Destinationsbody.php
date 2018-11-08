@@ -7,7 +7,6 @@ $destinations = $dao->getDestination();
 ?>
 
 <html>
-
 <div class = "bodytext">
 <body>
   <table>
@@ -27,9 +26,7 @@ $destinations = $dao->getDestination();
         }
 
     ?>
-
-  </div>
   </table>
 </body>
-
+</div>
 </html>
