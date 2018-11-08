@@ -4,7 +4,7 @@
 <h1>
 
 
-<div class = "whereintheworld">
+<div class = "prettymugs">
 
 <link rel="icon" href="whereintheworld.png" type = "image/gif">
 
