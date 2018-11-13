@@ -14,6 +14,3 @@
         <a href="Logout.php">Logout</a></li>
   </ul>
 </div>
-<div>
-  <?php echo $thisPage;?>
-</div>
