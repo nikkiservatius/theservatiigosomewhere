@@ -74,6 +74,7 @@ li {
     font-size: 20px;
     font-family: "Open Sans Condensed";
 
+
 }
 
 li a {
@@ -103,6 +104,7 @@ li a:hover {
 #currentpage {
   color: red;
   background-color:#112D32;
+  color: #112D32;
 }
 
 
