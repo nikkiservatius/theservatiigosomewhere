@@ -1,5 +1,5 @@
 
-<?php $thisPage = "Meettheservatii";
+<?php $thisPage = "Home";
 session_start();
 if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
 		header('Location: index.php');
