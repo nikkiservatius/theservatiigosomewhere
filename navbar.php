@@ -1,6 +1,6 @@
 <div class = "navbar">
   <ul>
-    <li <?php if ($thisPage == 'Home') echo  " id=\"currentpage\""; ?>>
+    <li <?php if ($thisPage == "Home") echo  " id=\"currentpage\""; ?>>
       <a href="Home.php">Home</a></li>
     <li> <?php if ($thisPage == 'Meettheservatii') echo 'id="currentpage"'; ?>
       <a href="Meettheservatii.php">Meet The Servatii</a></li>
