@@ -16,13 +16,13 @@ class Dao{
 
 
 public function addUser($username, $password){
-      //$salt=$password.$username;
-		  //$hashPass=hash('sha256', $salt);
+      $salt=$password.$username;
+		  $hashPass=hash('sha256', $salt);
 			$conn=$this->getConnection();
 			$saveQuery = $conn->prepare(
 				"INSERT INTO users (username, password) VALUES (:username, :password)");
 			$saveQuery->bindParam(":username", $username);
-			$saveQuery->bindParam(":password", $password);
+			$saveQuery->bindParam(":password", $hashPass);
       $saveQuery->execute();
   //        return true;
     //  } catch (PDOExeception $e) {
@@ -37,12 +37,12 @@ public function addUser($username, $password){
   		return $stmt->fetch();
 }
   public function getUserPassword($username, $password){
-    //$salt=$password.$username;
-		//$hashPass=hash('sha256', $salt);
+    $salt=$password.$username;
+		$hashPass=hash('sha256', $salt);
 		$conn=$this->getConnection();
 		$q=$conn->prepare("SELECT username FROM users WHERE username=:username AND password=:password");
 		$q->bindParam(":username", $username);
-		$q->bindParam(":password", $password);
+		$q->bindParam(":password", $hashPass);
 		$q->setFetchMode(PDO::FETCH_ASSOC);
 		$q->execute();
 		$result=$q->fetchAll();
@@ -73,7 +73,7 @@ public function addUser($username, $password){
   public function saveVote($city, $state, $country){
         $conn=$this->getConnection();
         $saveQuery =
-          "INSERT INTO destinations_input (city, state, country) VALUES (:city, :state, :country)";
+          "INSERT INTO vote_results (city, state, country) VALUES (:city, :state, :country)";
           $q=$conn->prepare($saveQuery);
         $q->bindParam(":city", $city);
         $q->bindParam(":state", $state);

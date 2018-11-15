@@ -11,7 +11,7 @@ $dao = new DAO();
 
 if(isset($_POST['SubmitVote'])){
   $dao->saveVote($voteValue);
-  $_SESSION['messages'][]="Thanks for the destination submission!";
+  $_SESSION['messages'][]="Thanks for voting!";
 }
 
 ?>

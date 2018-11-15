@@ -2,6 +2,7 @@
   <html lang="en">
   <head>
     <script src="jquery-3.3.1.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
     <link href="traveler.css" type="text/css" rel= "stylesheet" />
     <title>The Servatii Go Somewhere:Home</title>
     <link rel="icon" href="The Servatii Go Somewhere.jpg" type = "image/gif" sizes="16X16">
