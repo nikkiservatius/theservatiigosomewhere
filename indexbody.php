@@ -20,10 +20,10 @@
 
       <form method = POST action = 'Loginhandler.php'>
           <h5>
-            Username:
+            <label for="password">Username:</label>
 <input type="text" placeholder = "username here"name="username" id="username" value="<?php echo isset($_SESSION['presets']['username']) ? $_SESSION['presets']['username'] : ''; ?>"><br>
           <label for="password">Password:</label>
-          <input type= "password" placeholder = "password here" name = "password" ><br>
+          <input type= "password" placeholder = "password here" name = "password" id="password" ><br>
           <button type= "submit" value = "CreateAccount" name ="CreateButton"> Create Account</button>
           <button type= "submit" value = "Login" name="LoginButton"> Login</button>
       </form>
