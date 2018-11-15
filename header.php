@@ -21,6 +21,7 @@
     </div>
 
     <div class = "headingtitle">
+      <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
     The Servatii Go Somewhere
     </div>
   </h1>
