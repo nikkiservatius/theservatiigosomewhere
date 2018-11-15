@@ -22,7 +22,7 @@
           <h5>
             Username:
 <input type="text" placeholder = "username here"name="username" id="username" value="<?php echo isset($_SESSION['presets']['username']) ? $_SESSION['presets']['username'] : ''; ?>"><br>
-          Password:
+          <label for="password">Password:</label>
           <input type= "password" placeholder = "password here" name = "password" ><br>
           <button type= "submit" value = "CreateAccount" name ="CreateButton"> Create Account</button>
           <button type= "submit" value = "Login" name="LoginButton"> Login</button>
