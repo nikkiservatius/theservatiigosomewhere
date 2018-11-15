@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
 		header('Location: index.php');
@@ -10,12 +10,12 @@ if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
 
 <div class = "bodytext">
   <form method = POST action = "Adddestinationshandler.php">
-  City:<br>
-  <input type="text" name="city"><br>
-  State:<br>
-  <input type="text" name="state"><br>
-  Country:<br>
-  <select name="country">
+  <label for="city">City:</label><br>
+  <input type="text" name="city" id = "city"><br>
+  <label for="state">State:</label><br>
+  <input type="text" name="state" id="state"><br>
+  <label for="country">Country:</label><br>
+  <select name="country" id="country">
 <option value="" selected="selected">Select Country</option>
 <option value="United States">United States</option>
 <option value="United Kingdom">United Kingdom</option>
