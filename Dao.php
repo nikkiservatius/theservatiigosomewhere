@@ -16,7 +16,7 @@ class Dao{
 
 
 public function addUser($username, $password){
-      $salt=$password . $username;
+      $salt=$password.$username;
 		  $hashPass=hash('sha256', $salt);
 			$conn=$this->getConnection();
 			$saveQuery = $conn->prepare(
@@ -37,7 +37,7 @@ public function addUser($username, $password){
   		return $stmt->fetch();
 }
   public function getUserPassword($username, $password){
-    $salt=$password . $username;
+    $salt=$password.$username;
 		$hashPass=hash('sha256', $salt);
 		$conn=$this->getConnection();
 		$q=$conn->prepare("SELECT username FROM users WHERE username=:username AND password=:password");
@@ -84,7 +84,7 @@ public function addUser($username, $password){
 
 
     public function validateUser($username, $password){
-      $salt=$password . $username;
+      $salt=$password.$username;
 		  $hashPass=hash('sha256', $salt);
       $conn=$this->getConnection();
       $stmt = $conn->prepare("SELECT * FROM users WHERE username = :username");
