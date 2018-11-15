@@ -16,13 +16,13 @@ class Dao{
 
 
 public function addUser($username, $password){
-      $salt=$password.$username;
-		  $hashPass=hash('sha256', $salt);
+      //$salt=$password.$username;
+		  //$hashPass=hash('sha256', $salt);
 			$conn=$this->getConnection();
 			$saveQuery = $conn->prepare(
 				"INSERT INTO users (username, password) VALUES (:username, :password)");
 			$saveQuery->bindParam(":username", $username);
-			$saveQuery->bindParam(":password", $hashPass);
+			$saveQuery->bindParam(":password", $password);
       $saveQuery->execute();
   //        return true;
     //  } catch (PDOExeception $e) {
@@ -37,12 +37,12 @@ public function addUser($username, $password){
   		return $stmt->fetch();
 }
   public function getUserPassword($username, $password){
-    $salt=$password.$username;
-		$hashPass=hash('sha256', $salt);
+    //$salt=$password.$username;
+		//$hashPass=hash('sha256', $salt);
 		$conn=$this->getConnection();
 		$q=$conn->prepare("SELECT username FROM users WHERE username=:username AND password=:password");
 		$q->bindParam(":username", $username);
-		$q->bindParam(":password", $hashPass);
+		$q->bindParam(":password", $password);
 		$q->setFetchMode(PDO::FETCH_ASSOC);
 		$q->execute();
 		$result=$q->fetchAll();
