@@ -23,9 +23,9 @@ public function addUser($username, $password){
 			$saveQuery =
 				"INSERT INTO users (username, password) VALUES (:username, :password)";
         $q= $conn -> prepare($saveQuery);
-			//$q->bindParam(":username", $username);
+			$q->bindParam(":username", $username);
 			$q->bindParam(":password", $hashPass);
-      $q->bindParam(":password", $password);
+      //$q->bindParam(":password", $password);
       $q->execute();
   //        return true;
     //  } catch (PDOExeception $e) {
