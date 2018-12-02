@@ -43,10 +43,10 @@ public function addUser($username, $password){
 
 
   public function getUserPassword($username, $password){
-    $salt=$password.$username;
-		$hashPass=hash('sha256', $salt);
+    $salt=$password . $username;
+		$hashPass = hash('sha256', $salt);
 		$conn=$this->getConnection();
-		$q=$conn->prepare("SELECT username FROM users WHERE username=:username AND password=:password");
+		$q=$conn->prepare("SELECT username FROM users WHERE username = :username AND password = :password");
 		$q->bindParam(":username", $username);
 		$q->bindParam(":password", $hassPass);
 		$q->setFetchMode(PDO::FETCH_ASSOC);
