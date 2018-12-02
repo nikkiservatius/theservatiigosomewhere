@@ -1,5 +1,6 @@
 <?php
 class Dao{
+
   private $host = "us-cdbr-iron-east-01.cleardb.net";
   private $db = "heroku_9b079b48391d866";
   private $user = "bfecb98047ad0d";
@@ -20,7 +21,7 @@ public function addUser($username, $password){
 		  $hashPass=hash('sha256', $salt);
 			$conn=$this->getConnection();
 			$saveQuery =
-				"INSERT INTO users (username, password) VALUES (:username, :password)");
+				"INSERT INTO users (username, password) VALUES (:username, :password)";
         $q= $conn -> prepare($saveQuery);
 			$q->bindParam(":username", $username);
 			$q->bindParam(":password", $hashPass);
@@ -40,7 +41,7 @@ public function addUser($username, $password){
   		return $result;
   	}
 
-}
+
   public function getUserPassword($username, $password){
     $salt=$password.$username;
 		$hashPass=hash('sha256', $salt);
@@ -85,26 +86,7 @@ public function addUser($username, $password){
         $q->bindParam(":country", $country);
         $q->execute();
 }
-
-
-
-    public function validateUser($username, $password){
-      //$salt=$password.$username;
-		  //$hashPass=hash('sha256', $salt);
-      $conn=$this->getConnection();
-      $stmt = $conn->prepare("SELECT * FROM users WHERE username = :username");
-      $stmt->bindparam(":username", $username);
-      $stmt->execute();
-      $user = $stmt->fetch();
-      if ($user){
-        $digest = $user['password'];
-          if($password == $digest){
-            return true;
-          }
-          return false;
-      }
-      return false;
-    }
-
 }
+
+
 ?>

@@ -4,6 +4,7 @@
 	$password = $_POST['password'];
 
 	$messages = array();
+
 	$bad = false;
 
 	$_SESSION['presets']['username'] = $username;
@@ -31,6 +32,7 @@
 	require_once 'Dao.php';
 
 	$dao = new DAO();
+  
 	if(isset($_POST['CreateButton'])){
 		$user=$dao->getUsername($username);
 		if(empty($user)){
