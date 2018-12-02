@@ -15,7 +15,7 @@ if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
 
   <img class = "mySlides" src = "prettymugs.jpg" style="width:600px;height:450px">
   <img class = "mySlides" src = "prettymugs2.jpg" style="width:600px;height:450px">
-  <img class = "mySlides" src = "Nikkisface.jpg" style="width:600px;height:450px">
+  <img class = "mySlides" src = "prettymugs3.jpg" style="width:600px;height:450px">
 
 </div>
 
