@@ -16,14 +16,15 @@ class Dao{
 
 
 public function addUser($username, $password){
-      //$salt=$password.$username;
-		  //$hashPass=hash('sha256', $salt);
+      $salt=$password.$username;
+		  $hashPass=hash('sha256', $salt);
 			$conn=$this->getConnection();
-			$saveQuery = $conn->prepare(
+			$saveQuery =
 				"INSERT INTO users (username, password) VALUES (:username, :password)");
-			$saveQuery->bindParam(":username", $username);
-			$saveQuery->bindParam(":password", $password);
-      $saveQuery->execute();
+        $q= $conn -> prepare($saveQuery);
+			$q->bindParam(":username", $username);
+			$q->bindParam(":password", $hashPass);
+      $q->execute();
   //        return true;
     //  } catch (PDOExeception $e) {
       //    return false;
@@ -31,18 +32,22 @@ public function addUser($username, $password){
   }
   public function getUsername($username){
   		$conn=$this->getConnection();
-      $stmt = $conn->prepare("SELECT username FROM users WHERE username = :username");
-      $stmt->bindparam(":username", $username);
-      $stmt->execute();
-  		return $stmt->fetch();
+      $q = $conn->prepare("SELECT username FROM users WHERE username = :username");
+      $q->bindparam(":username", $username);
+      $q->setFetchMode(PDO::FETCH_ASSOC);
+  		$q->execute();
+  		$result=$q->fetchAll();
+  		return $result;
+  	}
+
 }
   public function getUserPassword($username, $password){
-    //$salt=$password.$username;
-		//$hashPass=hash('sha256', $salt);
+    $salt=$password.$username;
+		$hashPass=hash('sha256', $salt);
 		$conn=$this->getConnection();
 		$q=$conn->prepare("SELECT username FROM users WHERE username=:username AND password=:password");
 		$q->bindParam(":username", $username);
-		$q->bindParam(":password", $password);
+		$q->bindParam(":password", $hassPass);
 		$q->setFetchMode(PDO::FETCH_ASSOC);
 		$q->execute();
 		$result=$q->fetchAll();
