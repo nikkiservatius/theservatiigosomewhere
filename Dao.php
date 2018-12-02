@@ -49,7 +49,7 @@ public function addUser($username, $password){
 		$conn=$this->getConnection();
 		$q=$conn->prepare("SELECT username FROM users WHERE username = :username AND password = :password");
 		$q->bindParam(":username", $username);
-		$q->bindParam(":password", $hassPass);
+		$q->bindParam(":password", $hashPass);
     //$q->bindParam(":password", $password);
 		$q->setFetchMode(PDO::FETCH_ASSOC);
 		$q->execute();
