@@ -7,3 +7,34 @@ DB DataBase: heroku_9b079b48391d866
 DB Username: bfecb98047ad0d
 
 DB Password: f6b96ffa
+
+
+
+
+
+
+
+USE heroku_9b079b48391d866;
+
+DROP TABLE IF EXISTS users;
+CREATE TABLE users (
+	username VARCHAR(255)NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT
+);
+INSERT INTO users (username, password) VALUES ('NikkiRose', '1q2w3e4r');
+
+DROP TABLE IF EXISTS destinations_input;
+CREATE TABLE destinations_input(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	city VARCHAR(255) NOT NULL,
+    country VARCHAR(255) NOT NULL,
+    state VARCHAR(255)
+);
+
+
+DROP TABLE IF EXISTS vote_results;
+CREATE TABLE vote_results(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	vote_totals INT
+);
