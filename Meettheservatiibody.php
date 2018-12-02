@@ -13,7 +13,9 @@ if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
 
 <link rel="icon" href="prettymugs.jpg" type = "image/gif">
 
-  <img src="prettymugs.jpg" style="width:600px;height:450px;">
+  <img class = "mySlides" src = "prettymugs.jpg" style="width:600px;height:450px">
+  <img class = "mySlides" src = "prettymugs2.jpg" style="width:600px;height:450px">
+  <img class = "mySlides" src = "Nikkisface.jpg" style="width:600px;height:450px">
 
 </div>
 
@@ -28,4 +30,22 @@ We have traveled to Puerto Rico, California, Mexico and to many National Parks t
 <br>
 We recently tied the knot (Summer 2018), but since Nikki is working on her Masters degree and an additional teaching endorsement, we have not had an opportunity to go on a honeymoon. That's where you come in.
 </br>
+
+<script>
+var slideIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > x.length) {slideIndex = 1}
+    x[slideIndex-1].style.display = "block";
+    setTimeout(carousel, 3000); // Change image every 2 seconds
+
+}
+</script>
 </h1>
